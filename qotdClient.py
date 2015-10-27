@@ -10,7 +10,8 @@ import sys
 import socket  
 import errno
 #Default port if none are passed in via cmd line arguments 
-port = 17
+#Then why not name it default_port
+default_port = 17
 
 #Checks if the command line arguments are in the correct range
 if len(sys.argv) < 2 or len(sys.argv) > 3:
@@ -28,7 +29,7 @@ elif len(sys.argv) == 2:
 else:
 	#If there are 3 command line arguments get the hostname and port number 
     hostname = sys.argv[1]
-    port = int(sys.argv[2])
+    default_port = int(sys.argv[2])
     try:
         ipAddr=socket.gethostbyname(hostname)
     except:
