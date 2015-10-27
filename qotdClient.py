@@ -12,6 +12,7 @@ import errno
 #Default port if none are passed in via cmd line arguments 
 #Then why not name it default_port
 default_port = 17
+maxBytes = 512
 
 #Checks if the command line arguments are in the correct range
 if len(sys.argv) < 2 or len(sys.argv) > 3:
@@ -21,7 +22,7 @@ elif len(sys.argv) == 2:
 	#If there are 2 cmd line arguments just get the hostname
     hostname = sys.argv[1]
     try:
-		#Converts the passed hostname to an ip address and assignes it
+	#Converts the passed hostname to an ip address and assignes it
         ipAddr=socket.gethostbyname(hostname)
     except:
         print "Invalid hostname"
@@ -50,7 +51,7 @@ except socket.error as error:
     exit(-1)
 
 #Receive the message output by the QOTD server , max is 512 bytes
-message = sockfd.recv(512)
+message = sockfd.recv(maxBytes)
 
 #Output the received message
 print message 
