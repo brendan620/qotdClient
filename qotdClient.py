@@ -5,10 +5,10 @@
 #Purpose : Connect to the QOTD Server and print a quote
 #Active QOTD servers: mir.intstl.com , cygnus-x.net , djxmmx.net , alpha.mike-r.com , home.kyleterry.com
 
-
 import sys
 import socket  
 import errno
+
 #Default port if none are passed in via cmd line arguments 
 #Then why not name it default_port
 default_port = 17
