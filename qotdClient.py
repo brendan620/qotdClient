@@ -10,7 +10,6 @@ import socket
 import errno
 
 #Default port if none are passed in via cmd line arguments 
-#Then why not name it default_port
 default_port = 17
 maxBytes = 512
 
@@ -34,6 +33,7 @@ else:
     try:
         ipAddr=socket.gethostbyname(hostname)
     except:
+    	# Shouldn't be reached
         print "Invalid hostname"
         exit(0)
 
