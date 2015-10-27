@@ -27,13 +27,12 @@ elif len(sys.argv) == 2:
         print "Invalid hostname"
         exit(0)
 else:
-	#If there are 3 command line arguments get the hostname and port number 
+    #If there are 3 command line arguments get the hostname and port number 
     hostname = sys.argv[1]
     default_port = int(sys.argv[2])
     try:
         ipAddr=socket.gethostbyname(hostname)
     except:
-    	# Shouldn't be reached
         print "Invalid hostname"
         exit(0)
 
@@ -54,7 +53,7 @@ except socket.error as error:
 message = sockfd.recv(maxBytes)
 
 #Output the received message
-print message 
+print "Message:" + message 
 
 #Close the Socket connection 
 sockfd.close()
